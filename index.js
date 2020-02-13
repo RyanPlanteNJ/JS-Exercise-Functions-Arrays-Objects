@@ -91,7 +91,7 @@ function makeSmartPerson(name) {
     return num1 + num2;
   },
   'speak': function speakwords(){
-    return 'Hello, my name is ' + this.name;
+    return `Hello, my name is ${this.name}`;
   },
 };
   return smartypants;
@@ -155,7 +155,7 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(inventory) {
+function getCarInfoByIndex(inventory, index) {
   /* code here */
     const cartype = inventory.find((item, index) =>{
         return index === index
@@ -335,8 +335,13 @@ const argTimesTwo = (num) => num * 2; // code here!
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
+function carMaker(odometer) {
   /* code here */
+  const carodometer = {
+    odometer: odometer,
+    drive: (distance) => {return carodometer.odometer += distance}
+    };
+    return carodometer;
 }
 
 /// ////// END OF CHALLENGE /////////
