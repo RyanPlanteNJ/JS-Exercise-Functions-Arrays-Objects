@@ -49,7 +49,7 @@ function makePersonObject(id, name, email) {
     return StarWars;
 
 }
-  
+
 
 
 /**
@@ -65,17 +65,10 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(id, name, email) {
+function getName({id, name, email}) {
   /* code here */
-  let herewego = {
-    'id': id,
-    'name': name,
-    'email': email,
-    'sayhello': 'Hello, my name is ' + name,
-  };
-    return herewego.sayhello;
+    return 'Hello, my name is ' + name; 
 }
-   
 
 /**
  * ### Challenge `makeSmartPerson`
@@ -103,7 +96,7 @@ function makeSmartPerson(name) {
 };
   return smartypants;
 }
-  
+
 
 
 
@@ -164,7 +157,11 @@ function get3rdCar(inventory) {
 */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
-}
+    const cartype = inventory.find((item, index) =>{
+        return index === index
+    })
+     return `This is a ${cartype.car_make} ${cartype.car_model}`
+  }
 
 /**
  * ### Challenge `getLastCarInfo`
